@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'High Romantic Groovy';
+    src: url('{{ url_for('static', filename='fonts/HighRomanticGroovy.ttf') }}') format('truetype');
+}
+
+body {
+    font-family: 'High Romantic Groovy';
+    font-size: 18px;
+    background: linear-gradient(to right, #4b006e, #00ff95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 1, 0.6);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    color: #4b006e;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+button.login-btn {
+    height: auto;
+    background: #030303;
+    color: white;
+    text-align: center;
+    
+}
+
+button.logout-btn {
+    background: #ffffff;
+    color: rgb(17, 17, 17);
+    text-align: center;
+
+    
+}
+
+button.logout-btn:hover {
+    border: 1px solid;
+    background-color: #ffffff; 
+    transition: border-color 0.3s, color 0.3s;
+}
+
+button.create-btn {
+    background: #4b006e;
+    color: white;
+    width: 150px;
+}
+
+button.create-btn:hover {
+    box-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95, 0 0 30px #00ff95;
+}
+
+button.create-btn:hover::before {
+    opacity: 1;
+}
+
+button:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+a button {
+    margin-top: 0px;
+}
+
+.inline-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+.inline-group input[type="checkbox"] {
+    margin-right: 10px; /* Ajuste conforme necessário */
+}

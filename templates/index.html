@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spotify playlist creator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>playlist generator</h1>
+        {% if user_name %}
+            <p>connected as <b>{{ user_name }}</b>, or <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a></p>
+            <form action="{{ url_for('create_playlist') }}" method="post">
+                <div class="input-group">
+                    <label for="track1">add a song</label>
+                    <input type="text" id="track1" name="track1" required>
+                </div>
+                <div class="input-group" id="track2-group" style="display: none;">
+                    <label for="track2">another one</label>
+                    <input type="text" id="track2" name="track2">
+                </div>
+                <div class="input-group inline-group">
+                    <input type="checkbox" id="add-track2" name="add-track2"><label for="add-track2">more!</label>
+                </div>
+                <button type="submit" class="create-btn">Create</button>
+            </form>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button class="login-btn">Login with Spotify</button></a>
+        {% endif %}
+    </div>
+    <script>
+        document.getElementById('add-track2').addEventListener('change', function() {
+            var track2Group = document.getElementById('track2-group');
+            if (this.checked) {
+                track2Group.style.display = 'block';
+            } else {
+                track2Group.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
